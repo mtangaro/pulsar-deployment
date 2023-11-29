@@ -86,6 +86,15 @@ terraform apply -var "pvt_key=~/.ssh/<key>" -var "condor_pass=<condor-passord>" 
 This way Pulsar will be deployed in one step and the secrets will not live in
 a terraform state file, they can be stored in a vault or password manager instead.
 
+## Available Pulsar endpoints
+
+Endpoint name | Institution | Resources | Status 
+------------- | ----------- | --------- | ------ 
+IT02          | CNR         | 8 vCPUs, 60 GB RAM, 300 GB Storage | On-line, Connected to UseGalaxy.eu
+IT03          | CNR         | 32 vCPUs, 64 GB RAM, 500 GB Storage | On-line, Connected to UseGalaxy.it for testing
+ 
+
+
 ## LICENSE
 
 GPL
