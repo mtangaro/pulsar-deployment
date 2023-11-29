@@ -92,7 +92,13 @@ Endpoint name | Institution | Resources | Status
 ------------- | ----------- | --------- | ------ 
 IT02          | CNR         | 8 vCPUs, 60 GB RAM, 300 GB Storage | On-line, Connected to UseGalaxy.eu
 IT03          | CNR         | 32 vCPUs, 64 GB RAM, 500 GB Storage | On-line, Connected to UseGalaxy.it for testing
- 
+DE??          | ALU-FR      | |
+SK01          | IISAS       | |
+FR01          | CNRS        | |
+CZ01          | CESNET      | |
+EGI01         | EGI         | |
+BE01          | VIB         | |
+              | TUBITAK ULAKBIM | |
 
 
 ## LICENSE
