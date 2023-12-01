@@ -1,0 +1,74 @@
+---
+endpoints:
+
+  it02:
+    name: "IT02"
+    institution: "CNR"
+    country: "ITALY"
+    resources:
+      cpu: 8
+      ram: 60 GB
+      storage: 300 GB
+      gpu: no
+    info: "On-line, Connected to UseGalaxy.eu. Hosted on CINECA AdaCloud resources."
+ 
+  it03:
+    name: it03
+    institution: CNR
+    country: ITALY
+    resources:
+      cpu: 32
+      ram: 64 GB
+      storage: 500 GB
+      gpu: no
+    info: "On-line, Connected to UseGalaxy.it for testing. Hosted on GARR Cloud resources."
+
+  sk01:
+    name: "SK01"
+    institution: "IISAS"
+    coutry: "Slovakia"
+    resources:
+      cores: 
+      ram:
+      storage:
+    info:
+
+  fr01:
+    name: "FR01"
+    institution: "CNRS"
+    coutry: "France"
+    resources:
+      cpu:
+      ram:
+      storage:
+    info:
+
+  cz01:
+    name: "CZ01"
+    institution: "CESNET"
+    coutry: "Czech Republic"
+    resources:
+      cpu: 
+      ram:
+      storage:
+    info:
+
+  egi01:
+    name: "EGI01"
+    institution: "EGI"
+    coutry: ""
+    resources:
+      cpu: 
+      ram:
+      storage:
+    info:
+
+  be01:
+    name: "BE01"
+    institution: "VIB"
+    coutry: "Belgium"
+    resources:
+      cpu: 
+      ram:
+      storage:
+    info:

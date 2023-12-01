@@ -88,22 +88,21 @@ a terraform state file, they can be stored in a vault or password manager instea
 
 ## Available Pulsar endpoints
 
-Institution | Endpoint name | Resources | Status | Additional info
------------ | ------------- | --------- | ------ | ---------------
-CNR         | IT02          | 8 vCPUs, 60 GB RAM, 300 GB Storage | On-line, Connected to UseGalaxy.eu | Hosted on CINECA AdaCloud resources
-CNR         | IT03          | 32 vCPUs, 64 GB RAM, 500 GB Storage | On-line, Connected to UseGalaxy.it for testing | Hosted on GARR Cloud resources
-ALU-FR      |               | | |
-IISAS       | SK01          | | |
-CNRS        | FR01          | | |
-CESNET      | CZ01          | | |
-EGI         | EGI01         | | |
-VIB         | BE01          | | |
-TUBITAK ULAKBIM | | | |
-BSC         | | | |
-UiO         | | | |
-AGH/AGH-UST | | | |
-EPFL        | | | |
-
+Institution     | Endpoint name
+-----------     | -------------
+CNR             | IT02          
+CNR             | IT03         
+ALU-FR          |              
+IISAS           | SK01         
+CNRS            | FR01             
+CESNET          | CZ01             
+EGI             | EGI01            
+VIB             | BE01             
+TUBITAK ULAKBIM |
+BSC             | 
+UiO             | 
+AGH/AGH-UST     | 
+EPFL            | 
 
 ## LICENSE
 
