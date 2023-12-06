@@ -23,15 +23,16 @@ endpoints:
       gpu: no
     info: "On-line, Connected to UseGalaxy.it for testing. Hosted on GARR Cloud resources."
 
-  sk01:
-    name: "SK01"
-    institution: "IISAS"
-    coutry: "Slovakia"
-    resources:
-      cores: 
-      ram:
-      storage:
-    info:
+ sk01:
+   name: "SK01"
+   institution: "IISAS"
+   country: "SLOVAKIA"
+   resources:
+     cpu: 16
+     ram: 32 GB
+     storage: 500 GB
+     gpu: no
+   info: "On-line, Connected to UseGalaxy.eu. Hosted on IISAS Cloud resources."
 
   fr01:
     name: "FR01"
