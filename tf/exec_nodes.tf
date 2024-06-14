@@ -12,6 +12,7 @@ resource "openstack_compute_instance_v2" "exec-node" {
     uuid = "${data.openstack_networking_network_v2.internal.id}"
   }
 
+
   user_data = <<-EOF
     #cloud-config
     system_info:
@@ -69,12 +70,13 @@ resource "openstack_compute_instance_v2" "exec-node" {
           hosts: all
           connection: local
           roles:
-            - name: usegalaxy_eu.htcondor
+            - name: ansible-role-htcondor
               vars:
-                condor_role: execute
-                condor_copy_template: false
-                condor_host: ${openstack_compute_instance_v2.central-manager.network.1.fixed_ip_v4}
-                condor_password: ${var.condor_pass}
+                htcondor_version: 10.x
+                htcondor_type_of_node: wn
+                htcondor_role_execute: true
+                htcondor_server: ${openstack_compute_instance_v2.central-manager.network.1.fixed_ip_v4}
+                htcondor_password: ${var.condor_pass}
           tasks:
             - name: Disable pulsar
               systemd:
@@ -91,7 +93,7 @@ resource "openstack_compute_instance_v2" "exec-node" {
       - [ sh, -xc, "sed -i 's|localhost.localdomain|$(hostname -f)|g' /etc/telegraf/telegraf.conf" ]
       - systemctl restart telegraf
       - [ python3, -m, pip, install, ansible ]
-      - [ ansible-galaxy, install, -p, /home/centos/roles, usegalaxy_eu.htcondor ]
+      - [ ansible-galaxy, install, -p, /home/centos/roles, "git+https://github.com/usegalaxy-it/ansible-role-htcondor.git"]
       - [ ansible-playbook, -i, 'localhost,', /home/centos/condor.yml]
       - systemctl start condor
       EOF

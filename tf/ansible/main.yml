@@ -3,6 +3,18 @@
   become: yes
   hosts: all
 
+  pre_tasks:
+    - name: Install or upgrade Pulsar package
+      ansible.builtin.pip:
+        name: pulsar-app
+        virtualenv: "/opt/pulsar/venv3"
+        state: latest
+
+    - name: Restart autofs
+      ansible.builtin.systemd:
+        name: autofs.service
+        state: restarted
+
   handlers:
     - name: restart pulsar
       become: yes
@@ -12,17 +24,14 @@
         state: restarted
 
   roles:
-    - name: usegalaxy_eu.htcondor
+    - role: ansible-role-htcondor
       vars:
-        condor_role: central-manager
-        condor_copy_template: false
-    - usegalaxy-eu.bashrc
+        htcondor_version: "10.x"
+        htcondor_type_of_node: "front"
+        htcondor_role_manager: true
+        htcondor_role_submit: true
+    - role: usegalaxy-eu.bashrc
 
-  pre_tasks:
-    - name: Restart autofs
-      ansible.builtin.systemd:
-        name: autofs.service
-        state: restarted
   tasks:
     - name: import cron tasks
       include_tasks: cron.yml
@@ -42,7 +51,7 @@
         state: directory
         mode: '0775'
         owner: pulsar
-        group: pulsar 
+        group: pulsar
       become_user: pulsar
       become: yes
 
@@ -52,7 +61,7 @@
         dest: "{{ pulsar_root }}/config/app.yml"
         force: yes
         backup: yes
-        mode: 0700
+        mode: '0700'
         owner: pulsar
         group: pulsar
       notify: restart pulsar
